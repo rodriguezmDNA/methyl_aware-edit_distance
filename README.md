@@ -1,11 +1,12 @@
-# methyl_aware-edit_distance
-
-A tool for methyl-aware edit distance calculations.
-
-C>T or G>A conversion equivalency.
+# Methyl-Aware Edit Distance Calculation
 
 
-1. Hamming distance.
-2. Levenshtein distance (space efficient).
+A tool for methyl-aware edit distance calculations, which considers C>T or G>A conversion equivalency.
+
+Features:
+
+* Hamming distance
+* Space-efficient Levenshtein distance
+
 
 [Link to interactive app demo](https://methylaware-editdistance-demo.streamlit.app)
