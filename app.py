@@ -39,12 +39,14 @@ observed_sequence = st.text_input("Observed sequence","ATTG")
 
 
 # Boolean input (checkbox)
-is_read_1 = st.checkbox("Sequence from Read 1? (if read 2 select False)")
+is_read_1 = st.checkbox("Sequence from Read 1? (if read 2 select False)",True)
 
 
 if expected_sequence and observed_sequence:
 
-    edit_distance = MethylAwareDistance('ACTG','ATTGA',is_read_1)
+    edit_distance = MethylAwareDistance(expected_sequence,
+                                        observed_sequence,
+                                        is_read_1)
     
     if edit_distance.equal_length:
         st.write("Hamming distance", edit_distance.hamming_methyl_aware())
