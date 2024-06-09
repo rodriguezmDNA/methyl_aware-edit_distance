@@ -21,11 +21,12 @@ center_string = lambda x: f"<p style='text-align:center;'> {x} </p>"
 
 ##########################################
 
-########################################## SIDEBAR #############################################
+########################################## SIDEBAR ##########################################
 #st.sidebar.title('Sidebar')
 #st.sidebar.markdown('---')
 
 
+###########################################  MAIN  ###########################################
 html_string = "<h2 style='text-align:center;'> A tool for methyl-aware edit distance calculations </h2>"
 stHTML(html_string)
 st.markdown('---')
@@ -63,108 +64,6 @@ if expected_sequence and observed_sequence:
     stHTML(html_string)
 
 
-# #st.sidebar.markdown("<h1 style='text-align:center;'> This title is HTML </h1>", unsafe_allow_html=True)
-
-# stHTMLsidebar("<h1 style='text-align:center;'> Distribution parameters </h1>")
-
-# ## Selector
-# st.sidebar.markdown('Select average weight :rabbit:  :point_down:')
-# mu = st.sidebar.slider('',1,6,value=3,step=1)
-
-# stHTMLsidebar('<br>')
-
-# sigma = st.sidebar.slider('+-:',0.0,3.0,value=0.5,step=0.5)
-
-
-# st.markdown('<br>', unsafe_allow_html=True)
-# stHTML('<br>')
-
-# stHTMLsidebar("<h1 style='text-align:center;'> Sample size </h1>")
-
-# st.sidebar.markdown('Select sample size of :rabbit2: weights :point_down:')
-# sample_size = st.sidebar.slider('sample size:',1,30,value=3,step=1)
-
-# st.sidebar.markdown('Number of random samples :point_down:')
-# n_samples = st.sidebar.slider('sample size:',1,100,value=5,step=1)
-
-# st.sidebar.markdown('---')
-
-# #############################################################################################
-
-
-# ########################################## MAIN #############################################
-
-# html_string = "<h1 style='text-align:center;'> Sampler with normal distribution </h1>"
-# stHTML(html_string)
-# st.markdown('---')
-
-
-
-# #############################################
-
-
-# def get_pdf(mu, sigma):
-#     # Mean and standard deviation
-
-#     # Generating points on the x axis between -4 and 4, which is typical for a normal distribution plot
-#     x = np.linspace(mu - 4*sigma, mu + 4*sigma, 1000)
-
-#     # Calculating the probability density function for the normal distribution
-#     pdf = (1 / (np.sqrt(2 * np.pi * sigma**2))) * np.exp(-0.5 * ((x - mu) ** 2) / (sigma ** 2))
-#     return pd.DataFrame({'X':x,'PDF':pdf})
-
-
-# # Step 2: Function to extract a sample of n weights from the distribution
-# def sample_weights(mu, sigma, n):
-#     return np.random.normal(mu, sigma, n)
-
-# # Step 3: Function to plot the mean of the sample onto the previous plot
-# def get_sample_mean(mu, sigma, n):
-#     sample = sample_weights(mu, sigma, n)
-#     return np.mean(sample)
-
-
-# underlying_distribution = get_pdf(mu, sigma)
-
-
-# sample_means = [(get_sample_mean(mu,sigma, sample_size),.01) for i in range(n_samples)]
-# sample_means = pd.DataFrame(sample_means,columns=['mean','ypos'])
-
-
-# #Chart with tooltip 
-# st.markdown('<style>#vg-tooltip-element{z-index: 1000051}</style>', unsafe_allow_html=True)#hack to make tooltip visible in full-screen mode
-
-# chart = alt.Chart(underlying_distribution).mark_line().encode(
-#     x=alt.X('X',title=f'distribution of weight'),
-#     y=alt.Y('PDF',axis=None),
-#     color=alt.value('black')
-
-# ).properties(
-#     title=f'Normal Distribution of Rabbit Weights | Mean={mu} kg, SD={sigma} kg',
-#     width=600,
-#     height=300,
-    
-# )
-
-
-
-# points_chart = alt.Chart(sample_means).mark_point(filled=True).encode(
-#     x='mean',
-#     y='ypos',
-#     color=alt.value('red')
-# )
-
-
-# chart = (chart + points_chart).interactive()
-# chart = chart.configure(background='white')
-# st.altair_chart(chart, use_container_width=True)
-
-
-
-# ### Some space
-# stHTML('<br>')
-
-
 #############################################
 stHTML('<br>')
 stHTML('<br>')
@@ -173,6 +72,3 @@ st.markdown('---')
 
 html_string = f"<h5 style='text-align:center;'> Joel Rodriguez Medina </h5>"
 stHTML(html_string)
-#st.write('Joel Rodriguez-Medina')
-#logoDir = 'https://1jj36121ulnl3yz5ue21q04x-wpengine.netdna-ssl.com/wp-content/uploads/2020/05/Foodome_Logo.png'
-#components.html(f"<img src='{logoDir}' style='width:25%;margin-left: auto;margin-right: auto;display: block'>")
