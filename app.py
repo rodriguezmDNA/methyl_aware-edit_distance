@@ -23,10 +23,10 @@ center_string = lambda x: f"<p style='text-align:center;'> {x} </p>"
 
 ########################################## SIDEBAR #############################################
 #st.sidebar.title('Sidebar')
-st.sidebar.markdown('---')
+#st.sidebar.markdown('---')
 
 
-html_string = "<h1 style='text-align:center;'> An interactive tool for methyl-aware edit distance calculations </h1>"
+html_string = "<h2 style='text-align:center;'> A tool for methyl-aware edit distance calculations </h2>"
 stHTML(html_string)
 st.markdown('---')
 
@@ -49,10 +49,18 @@ if expected_sequence and observed_sequence:
                                         is_read_1)
     
     if edit_distance.equal_length:
-        st.write("Hamming distance", edit_distance.hamming_methyl_aware())
-    else:
-        st.write("Levenshtein distance", edit_distance.space_efficient_levenshtein_methyl_aware())
 
+        html_string = f"<h4 style='text-align:center;'> Hamming distance: <code>{edit_distance.hamming_methyl_aware()}</code> </h4>"
+        
+
+        #st.write("Hamming distance", edit_distance.hamming_methyl_aware())
+    else:
+        html_string = f"<h4 style='text-align:center;'> Levenshtein distance: <code>{edit_distance.space_efficient_levenshtein_methyl_aware()}</code></h4>"
+        #st.write("Levenshtein distance", edit_distance.space_efficient_levenshtein_methyl_aware())
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    stHTML(html_string)
 
 
 # #st.sidebar.markdown("<h1 style='text-align:center;'> This title is HTML </h1>", unsafe_allow_html=True)
@@ -161,6 +169,10 @@ if expected_sequence and observed_sequence:
 stHTML('<br>')
 stHTML('<br>')
 st.markdown('---')
-st.write('Joel Rodriguez-Medina')
+
+
+html_string = f"<h5 style='text-align:center;'> Joel Rodriguez Medina </h5>"
+stHTML(html_string)
+#st.write('Joel Rodriguez-Medina')
 #logoDir = 'https://1jj36121ulnl3yz5ue21q04x-wpengine.netdna-ssl.com/wp-content/uploads/2020/05/Foodome_Logo.png'
 #components.html(f"<img src='{logoDir}' style='width:25%;margin-left: auto;margin-right: auto;display: block'>")
