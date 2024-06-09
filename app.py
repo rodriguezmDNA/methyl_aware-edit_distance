@@ -1,15 +1,8 @@
 ### Streamlit
-from random import shuffle
 
 import streamlit as st
-import streamlit.components.v1 as components
 
 from methyl_aware_distance import MethylAwareDistance
-
-
-import pandas as pd
-import numpy as np
-import altair as alt
 
 
 #### Styling functions
