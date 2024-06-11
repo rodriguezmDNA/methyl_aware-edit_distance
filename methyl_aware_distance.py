@@ -41,7 +41,7 @@ class MethylAwareDistance:
         ## Read 1
         5'---mCG---3'
             
-        Bad protection: 5'---TG---3'
+        Bad protection:  5'---TG---3'
         Good protection: 5'---CG---3'
 
 
@@ -54,7 +54,7 @@ class MethylAwareDistance:
         3'---GT---5'  || C>T in the bottom strand
 
 
-        5'---CA---3'  || Read as a G>A conversion when normalized to 5'>3'
+        5'---CA---3'  || G>A conversion when normalized to 5'>3'
         3'---GT---5'  || 
         """
 
